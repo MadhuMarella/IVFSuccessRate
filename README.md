@@ -41,12 +41,13 @@ After installing Java, configure the JAVA_HOME environment variable:
    ```bash
    /usr/libexec/java_home
 
-This will return a path like:
+   This will return a path like:
    ```bash
    /Library/Java/JavaVirtualMachines/jdk-<version>.jdk/Contents/Home
+   
 
 2. Set JAVA_HOME temporarily (for the current terminal session):
 
-```bash
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$JAVA_HOME/bin:$PATH
+   ```bash
+   export JAVA_HOME=$(/usr/libexec/java_home)
+   export PATH=$JAVA_HOME/bin:$PATH
