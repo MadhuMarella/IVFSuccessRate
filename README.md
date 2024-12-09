@@ -37,10 +37,16 @@ Before running the application, ensure the following are installed on your syste
 
 After installing Java, configure the JAVA_HOME environment variable:
 
-Find the Java installation path using the command:
+1. Find the Java installation path using the command:
    ```bash
    /usr/libexec/java_home
 
 This will return a path like:
    ```bash
    /Library/Java/JavaVirtualMachines/jdk-<version>.jdk/Contents/Home
+
+2. Set JAVA_HOME temporarily (for the current terminal session):
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH
