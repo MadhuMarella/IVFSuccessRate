@@ -64,12 +64,20 @@ This should display the Java installation path.
 
 4.Check Java installation:
 
-```bash
-java -version
+   ```bash
+   java -version
+
+
 
 You should see output similar to:
+
+
 
 java version "17.0.8"
 Java(TM) SE Runtime Environment (build 17.0.8+10-LTS-289)
 Java HotSpot(TM) 64-Bit Server VM (build 17.0.8+10-LTS-289, mixed mode, sharing)
 
+
+
+
+### Step3
