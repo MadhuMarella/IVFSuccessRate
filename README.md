@@ -19,7 +19,6 @@ Before running the application, ensure the following are installed on your syste
 
 ### Step 1: Install Java
 
-#### **Option 1: Install Java via Homebrew (Recommended)**
 
 1. **Install Homebrew (if not already installed):**
    ```bash
@@ -35,17 +34,14 @@ Before running the application, ensure the following are installed on your syste
 
 ### Step 2: Configure JAVA_HOME
 
+
 After installing Java, configure the JAVA_HOME environment variable:
 
 1. Find the Java installation path using the command:
    ```bash
-   /usr/libexec/java_home
+      /usr/libexec/java_home
    
 
-   This will return a path like:
-   ```bash
-   /Library/Java/JavaVirtualMachines/jdk-<version>.jdk/Contents/Home
-   
 
 2. Set JAVA_HOME temporarily (for the current terminal session):
 
@@ -62,22 +58,54 @@ After installing Java, configure the JAVA_HOME environment variable:
 This should display the Java installation path.
 
 
-4.Check Java installation:
+### Step3: Install Apache Tomcat
 
-   ```bash
-   java -version
+1.**Download Apache Tomcat:**
 
-
-
-You should see output similar to:
+Download the apache-tomcat-9.0.97.zip file from the repository and Extract the contents into a folder named apache-tomcat-9.0.97.
 
 
+---
 
-java version "17.0.8"
-Java(TM) SE Runtime Environment (build 17.0.8+10-LTS-289)
-Java HotSpot(TM) 64-Bit Server VM (build 17.0.8+10-LTS-289, mixed mode, sharing)
+### Pre-SetUp
+
+1.**Download the IVFCalculator.war file:**
+
+This file contains the prebuilt web application archive.
+
+2.**Deploy the application:**
+
+Copy the IVFCalculator.war file into the apache-tomcat-9.0.97/webapps directory.
+
+---
+
+## Running the Application
+
+
+1.**Start the Tomcat server:**
+
+Open the terminal, navigate to the Tomcat bin directory:
+
+      cd /path/to/apache-tomcat-9.0.97/bin
+
+
+Start the server:
+
+      ./catalina.sh start
 
 
 
+2.**Access the application:**
 
-### Step3
+Open a web browser and go to:
+
+   http://localhost:8080/IVFCalculator/index.jsp
+
+
+3.**Use the application:**
+
+Enter the required inputs on the displayed HTML page. 
+
+Click **Submit** to view the success rate and additional options. 
+
+You can click **Try Again** to return to the input page and test new values.
