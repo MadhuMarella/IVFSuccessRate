@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>IVFCalculatorServlet</display-name>
+    <servlet-name>IVFCalculatorServlet</servlet-name>
+    <servlet-class>IVFCalculatorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IVFCalculatorServlet</servlet-name>
+    <url-pattern>/IVFCalculatorServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
