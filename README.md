@@ -40,6 +40,7 @@ After installing Java, configure the JAVA_HOME environment variable:
 1. Find the Java installation path using the command:
    ```bash
    /usr/libexec/java_home
+   
 
    This will return a path like:
    ```bash
@@ -51,3 +52,24 @@ After installing Java, configure the JAVA_HOME environment variable:
    ```bash
    export JAVA_HOME=$(/usr/libexec/java_home)
    export PATH=$JAVA_HOME/bin:$PATH
+
+3. Verify the setup:
+
+   ```bash
+   echo $JAVA_HOME
+
+
+This should display the Java installation path.
+
+
+4.Check Java installation:
+
+```bash
+java -version
+
+You should see output similar to:
+
+java version "17.0.8"
+Java(TM) SE Runtime Environment (build 17.0.8+10-LTS-289)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.8+10-LTS-289, mixed mode, sharing)
+
