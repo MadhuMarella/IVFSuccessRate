@@ -37,23 +37,26 @@
     <div class="container">
         <div class="form-container">
             <h2 class="form-title">IVF Success Estimator Form</h2>
-            <form method="POST" action="IVFCalculatorServlet">
+            <form method="post" action="IVFCalculatorServlet">
                 <h4 class="text-primary">User Input - Formula Selection Parameters</h4>
+                
                 <div class="mb-3">
-                    <label for="own-eggs" class="form-label">Using Own Eggs:</label>
-                    <select id="own-eggs" name="own_eggs" class="form-select" required>
-                        <option value="true">TRUE</option>
-                        <option value="false">FALSE</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="past-ivf" class="form-label">Used IVF in the Past:</label>
-                    <select id="past-ivf" name="past_ivf" class="form-select" required>
-                        <option value="true">TRUE</option>
-                        <option value="false">FALSE</option>
-                        <option value="na">N/A</option>
-                    </select>
-                </div>
+			        <label for="own-eggs" class="form-label">Using Own Eggs:</label>
+			        <select id="own-eggs" name="own_eggs" class="form-select" required onchange="togglePastIVF()">
+			            <option value="true">TRUE</option>
+			            <option value="false">FALSE</option>
+			        </select>
+			    </div>
+			    
+			    <div class="mb-3" id="past-ivf-container">
+			        <label for="past-ivf" class="form-label">Used IVF in the Past:</label>
+			        <select id="past-ivf" name="past_ivf" class="form-select" required onchange="checkNA()">
+			            <option value="true">TRUE</option>
+			            <option value="false">FALSE</option>
+			            <option value="na">N/A</option>
+			        </select>
+			    </div>
+                
                 <div class="mb-3">
                     <label for="infertility-reason-known" class="form-label">Knows Infertility Reason:</label>
                     <select id="infertility-reason-known" name="infertility_reason_known" class="form-select" required>
@@ -149,6 +152,48 @@
             </form>
         </div>
     </div>
+    
+    
+    <script>
+    function togglePastIVF() {
+        var ownEggsSelect = document.getElementById('own-eggs');
+        var ownEggsValue = ownEggsSelect.value;
+        var pastIVFSelect = document.getElementById('past-ivf');
+        var pastIVFValue = pastIVFSelect.value;
+
+        // If "Using Own Eggs" is TRUE
+        if (ownEggsValue === 'true') {
+            // Check if the past IVF field is set to "N/A"
+            if (pastIVFValue === 'na') {
+                alert(
+                    "If 'Used IVF in the Past' is set to N/A, 'Using Own Eggs' cannot be TRUE. Changing it back to FALSE."
+                );
+                ownEggsSelect.value = 'false'; // Automatically set "Using Own Eggs" to FALSE
+            }
+        }
+    }
+
+    function checkNA() {
+        var pastIVFSelect = document.getElementById('past-ivf');
+        var pastIVFValue = pastIVFSelect.value;
+        var ownEggsSelect = document.getElementById('own-eggs');
+
+        // If "Used IVF in the Past" is N/A
+        if (pastIVFValue === 'na') {
+            alert(
+                "If N/A, the answer to this question is not relevant in the formula selection. Automatically setting 'Using Own Eggs' to FALSE."
+            );
+            ownEggsSelect.value = 'false'; // Automatically set "Using Own Eggs" to FALSE
+        }
+    }
+
+    // Call the function on page load to ensure correct behavior
+    window.onload = function () {
+        togglePastIVF();
+    };
+
+
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

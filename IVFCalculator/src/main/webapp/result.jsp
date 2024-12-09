@@ -12,6 +12,9 @@
         <h2>Estimated Success Rate: <span class="text-success">${successRate}%</span></h2>
         <a href="index.jsp" class="btn btn-primary mt-3">Try Again</a>
     </div>
+    
+   
+    
 </body>
 </html>
     

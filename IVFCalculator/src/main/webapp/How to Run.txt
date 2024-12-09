@@ -1,0 +1,29 @@
+
+
+// First download eclipse j2ee software
+
+// open the software and load Tomcat server 9.0
+
+// load out project IVFCalculator into Eclipse
+
+// it contains both jsp file and servlets file
+
+// the index.jsp is the start file which open the IVF calculator
+
+// open all the files are upload then the control is going to servlet file Called IVFCalculatorServlet
+
+// again the IVFCalcualtorServlet is having to life cylce method init() and dopost()
+
+// the init method is going the load the csv file which again depends on the java file called IVFForumalPerser.java
+
+// it load all the content from the csv file and return the List formate into sevlet.
+
+// it do post method we retrieve all the fields information and then decides which formula is selected.
+
+// calculate the score based on forumla selected
+
+// return the score into result.jsp file
+
+
+
+

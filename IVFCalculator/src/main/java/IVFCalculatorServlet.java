@@ -106,7 +106,8 @@ public class IVFCalculatorServlet extends HttpServlet {
 
         // Calculate success rate
         double successRate = Math.exp(score) / (1 + Math.exp(score));
-        req.setAttribute("successRate", successRate * 100);
+        String Sr=String.format("%.2f", successRate*100);
+        req.setAttribute("successRate", Sr);
         req.getRequestDispatcher("result.jsp").forward(req, res);
     }
 
